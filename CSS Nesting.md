@@ -1,6 +1,8 @@
-https://developer.chrome.com/articles/css-nesting/ 
-https://developer.chrome.com/articles/css-nesting/#understanding-the-nesting-parser 
-https://www.w3.org/TR/css-nesting-1/#nesting  
+## CSS Nesting
+
+https://developer.chrome.com/articles/css-nesting/  
+https://developer.chrome.com/articles/css-nesting/#understanding-the-nesting-parser  
+https://www.w3.org/TR/css-nesting-1/#nesting   
 ### almost same as scss, except those cases: 
 
 1. `&<space>` operator inside nesting, do not confuse with regular `&`.
