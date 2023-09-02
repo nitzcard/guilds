@@ -1,0 +1,89 @@
+/* 
+
+1. new css nesting,
+2. variables
+3. has op 
+*/
+
+
+/* Regular And operator */
+button {
+  /* css variable */
+  --my-color: rgb(39, 190, 220);
+
+  &.active {
+    background: green;
+  }
+
+  &.info {
+    background: var(--my-color);
+  }
+
+  &.disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+    user-select: none;
+  }
+
+  &:is(:hover, :focus) {
+    background: blue;
+  }
+}
+
+ul {
+  & li:nth-child(1) {
+    color: var(--my-color, gold);
+  }
+
+  & li {
+    color: purple;
+    font-weight: 800;
+  }
+
+  /* & with space = parent element */
+  && li {
+    color: violet;
+  }
+}
+
+/* nest operator - most have if used under element */
+.data {
+  .someChild {
+    border: 1px solid red;
+  }
+
+  & p {
+    font-size: 50px;
+  }
+
+  .ok  {
+    background: green;
+
+    & {
+      background: rgb(3, 158, 255);
+    }
+  }
+
+  .danger {
+    background: red;
+  }
+
+  &:has(.danger) {
+    opacity: 0.5;
+  }
+}
+
+.footer {
+  margin-top: 90px;
+}
+
+/* reversed parent */
+.ok {
+  .footer & {
+    transition: background-color 2s linear;
+
+    &:hover {
+      background: silver;
+    }
+  }
+}
